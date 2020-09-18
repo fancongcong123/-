@@ -8,8 +8,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    this.$axios({
+      url: "http://157.122.54.189:9083/post",
+      // type:
+      method: "get",
+    }).then((res) => {
+      console.log(res.data.data[0]);
+    });
+  },
+};
 </script>
 
-<style>
+<style lang="less" scoped>
 </style>
